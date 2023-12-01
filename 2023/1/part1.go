@@ -12,7 +12,6 @@ func Part1(lines []string) int {
 		var first string
 		var last string
 		for _, char := range line {
-			// fmt.Printf("%c\n", char)
 			if !unicode.IsDigit(char) {
 				line = strings.Replace(line, string(char), "", -1)
 			}

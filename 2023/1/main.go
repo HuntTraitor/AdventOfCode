@@ -9,7 +9,6 @@ import (
 
 func main() {
 	lines := LoadInput("input.txt")
-
 	fmt.Printf("Part 1: %d\n", Part1(lines))
 	fmt.Printf("Part 2: %d\n", Part2(lines))
 }
