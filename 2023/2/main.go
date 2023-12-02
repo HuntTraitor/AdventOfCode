@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"log"
-	"bufio"
+	"strings"
 )
 
 func main() {
@@ -14,17 +14,10 @@ func main() {
 }
 
 func LoadInput(file_path string) []string {
-	var arr []string
-
-	file, err := os.Open(file_path)
+	file, err := os.ReadFile(file_path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		arr = append(arr, scanner.Text())
-	}
-	return arr
+	return strings.Split(string(file), "\n")
 }
 
